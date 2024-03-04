@@ -25,18 +25,27 @@ const handleSearch = () => {
 }
 
 const handleHarryPotterSearch = () => {
+    document.getElementById("popularSearch1").style.backgroundColor = 'black'
+    document.getElementById("popularSearch2").style.backgroundColor = ''
+    document.getElementById("popularSearch3").style.backgroundColor = ''
     const bookTitleInput = "harry+potter"
     const url = `https://www.googleapis.com/books/v1/volumes?q=${bookTitleInput}`
     console.log(url)
     fetchGoogleBooksAPI(url)
 }
 const handleLordOfRingsSearch = () => {
+    document.getElementById("popularSearch2").style.backgroundColor = 'black'
+    document.getElementById("popularSearch1").style.backgroundColor = ''
+    document.getElementById("popularSearch3").style.backgroundColor = ''
     const bookTitleInput = "the+lord+of+the+rings"
     const url = `https://www.googleapis.com/books/v1/volumes?q=${bookTitleInput}`
     console.log(url)
     fetchGoogleBooksAPI(url)
 }
 const handleLittlePrinceSearch = () => {
+    document.getElementById("popularSearch3").style.backgroundColor = 'black'
+    document.getElementById("popularSearch1").style.backgroundColor = ''
+    document.getElementById("popularSearch2").style.backgroundColor = ''
     const bookTitleInput = "the+little+prince"
     const url = `https://www.googleapis.com/books/v1/volumes?q=${bookTitleInput}`
     console.log(url)

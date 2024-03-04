@@ -13,7 +13,7 @@
 
         <title>Book Explorer</title>
     </head>
-    <body>
+    <body onload="handleHarryPotterSearch()">
         <img src="photos/book_archive_logo.png" id="logo" alt="Book Archive logo"/>
         <div class="row">
             <div class="col-9">
@@ -28,13 +28,13 @@
         </div>
         <div class="row">
             <div class="col-4">
-                <button class="btn btn-secondary" onclick="handleHarryPotterSearch()">Harry Potter</button>
+                <button id="popularSearch1" class="btn btn-secondary" onclick="handleHarryPotterSearch()">Harry Potter</button>
             </div>
             <div class="col-4">
-                <button class="btn btn-secondary" onclick="handleLordOfRingsSearch()">The Lord of the Rings</button>
+                <button id="popularSearch2" class="btn btn-secondary" onclick="handleLordOfRingsSearch()">The Lord of the Rings</button>
             </div>
             <div class="col-4">
-                <button class="btn btn-secondary" onclick="handleLittlePrinceSearch()">The Little Prince</button>
+                <button id="popularSearch3" class="btn btn-secondary" onclick="handleLittlePrinceSearch()">The Little Prince</button>
             </div>
         </div>
         <div class="row">
