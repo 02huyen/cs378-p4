@@ -1,0 +1,37 @@
+body {
+    background-color: #FFE6EC;
+    color: black;
+}
+img {
+    padding: 0; 
+    margin: 0;
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+h4 {
+    text-align: center;
+    margin-top: 5% !important;
+}
+.row {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+#searchResults {
+    padding-left: 5%;
+}
+#searchBar {
+    display: block;
+    margin-left: auto;
+    margin-top: 15%;
+    width: 95%;
+    border-radius: 15px;
+}
+#searchButton {
+    display: block;
+    margin-right: auto;
+    border-radius: 15px;
+    margin-top: 60%;
+}
