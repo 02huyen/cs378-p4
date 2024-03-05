@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/cs378-p4/static/css/main.22029bce.css",
+    "main.js": "/cs378-p4/static/js/main.654c9761.js",
+    "static/media/book_archive_logo.png": "/cs378-p4/static/media/book_archive_logo.e5be832da3903baf630e.png",
+    "index.html": "/cs378-p4/index.html",
+    "main.22029bce.css.map": "/cs378-p4/static/css/main.22029bce.css.map",
+    "main.654c9761.js.map": "/cs378-p4/static/js/main.654c9761.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22029bce.css",
+    "static/js/main.654c9761.js"
+  ]
+}
