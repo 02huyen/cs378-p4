@@ -4,23 +4,21 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import PopularSearchButton from './ components/popularSearchButton';
 import SearchButton from './ components/SearchButton';
 import BookSearchInput from './ components/BookSearchInput';
+import SearchResult from './ components/searchResults';
 
 function App() {
     async function fetchGoogleBooksAPI(url) {
         try {
             const response = await fetch(url)
             const json = await response.json()
+
+            setApiOutput([]);
     
-            document.getElementById("searchTitleResults").innerHTML = ""
-    
-            for (var bookResult = 0; bookResult < json.items.length; bookResult++) {
-                var bookTitle = json.items[bookResult]
-                // line of code from https://developers.google.com/books/docs/v1/getting_started
-                document.getElementById("searchTitleResults").innerHTML += "<br>" + bookTitle.volumeInfo.title
-            }
+            const bookTitles = json.items.map((bookData) => bookData.volumeInfo.title)
+            setApiOutput(bookTitles)
         } catch (err) {
             console.log("could not fetch book search")
-            document.getElementById("searchTitleResults").innerHTML += "<br>" +  "No books found."
+            setApiOutput(['No books found.'])
         }
     }
     
@@ -29,6 +27,7 @@ function App() {
         setLordOfRingsButtonColor('')
         setHarryPotterButtonColor('')
         const bookTitleInput = searchInput
+        console.log('search input: ' + searchInput)
         const formattedBookTitleInput = bookTitleInput.replace(/\s+/g, '+');
         const url = `https://www.googleapis.com/books/v1/volumes?q=${formattedBookTitleInput}`
         console.log(url)
@@ -67,6 +66,7 @@ function App() {
     const [lordOfRingsButtonColor, setLordOfRingsButtonColor] = useState('')
     const [littlePrinceButtonColor, setLittlePrinceButtonColor] = useState('')
     const [searchInput, setSearchInput] = useState('')
+    const [apiOutput, setApiOutput] = useState([])
     
     return (
         <div onLoad={() => handleHarryPotterSearch()}>
@@ -102,10 +102,9 @@ function App() {
                     buttonColor={littlePrinceButtonColor} /> 
             </div>
         </div>
-        <div className="row">
-            <div className="row" id="searchTitleResults"></div>
+        <div className="row" id="searchTitleResults">
+           <SearchResult bookTitles={apiOutput}/>
         </div>
-        <script src="script.js"></script>
     </div>
     )
 }
